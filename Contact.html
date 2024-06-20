@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - GreatJob!</title>
+    <link rel="shortcut icon" href="images/Logo_Miniature.png">
+    <link rel="stylesheet" href="stylecontact.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img width="300" src="images/Logo.png" alt="Logo de notre restaurant"></a>
+    </header>
+    <section id="contact">
+        <div class="contact-box">
+          <div class="contact-links">
+            <h2>CONTACT</h2>
+            <div class="links">
+              <div class="link"><a href="https://www.linkedin.com/in/kilfen-baridon-ba50212a5/"><img src="https://i.postimg.cc/m2mg2Hjm/linkedin.png" alt="linkedin"></a></div>
+              <div class="link"><a href="https://github.com/ArcamonUP/ProjetFinal"><img src="https://i.postimg.cc/YCV2QBJg/github.png" alt="GitHub"></a></div>
+              <div class="link"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"><img src="https://i.postimg.cc/W4Znvrry/codepen.png" alt="PtiteBox"></a></div>
+              <div class="link"><a href="https://gmail.com/"><img src="https://i.postimg.cc/NjLfyjPB/email.png" alt="Mail"></a></div>
+            </div>
+            <h3> Tel. : 09 27 98 37 73</h3>
+          </div>
+          <div class="contact-form-wrapper">
+            <form>
+              <div class="form-item"><input type="text" id="1" name="sender" required><label>Votre Nom :</label></div>
+              <div class="form-item"><input type="text" id="2" name="email" required><label>Votre Email (ou Tel.) :</label></div>
+              <div class="form-item"><textarea id="3" name="message" required></textarea><label>Votre Demande :</label></div>
+              <button class="submit-btn" id="submitBtn">Envoyer</button>  
+            </form>
+            <div id="errorMessage" style="color: red; margin-top: 20px; text-align: center; font-weight: bold;"></div>
+          </div>
+        </div>
+    </section>
+    <script src="Contact.js"></script>     
+</body>
+</html>

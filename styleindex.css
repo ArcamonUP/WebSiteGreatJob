@@ -1,0 +1,512 @@
+* {
+    color: white;
+    font-family: sans-serif;
+    margin: auto;
+    scrollbar-width: thin;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    background-color: rgb(20, 27, 51);
+    height: 40px;
+    z-index: 1;
+    box-shadow: 2px 2px 3px antiquewhite;
+    align-items: center;
+}
+
+.Credo {
+    height: 40px;
+    padding-left: 250px;
+    background-color: transparent;
+}
+
+.Credo p {
+    font-family: "Lumios Marker";
+    font-size: 20px;
+}
+
+.Labels {
+    width: 235px;
+}
+
+#menu_toggle {
+    opacity: 0;
+}
+
+#menu_toggle:checked + .menu_btn > span {
+    transform: rotate(45deg);
+}
+
+#menu_toggle:checked + .menu_btn > span::before,
+#menu_toggle:checked + .menu_btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+#menu_toggle:checked ~ .menu_box {
+    left: 0 !important;
+}
+
+.menu_btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 2;
+    background-color: transparent;
+}
+
+.menu_btn > span,
+.menu_btn > span::before,
+.menu_btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: antiquewhite;
+    transition-duration: .25s;
+}
+
+.menu_btn > span::before {
+    content: '';
+    top: -8px;
+}
+
+.menu_btn > span::after {
+    content: '';
+    top: 8px;
+}
+
+.menu_box {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    padding: 80px 0;
+    list-style: none;
+    box-shadow: 2px 2px 6px antiquewhite;
+    transition-duration: .25s;
+    z-index: 0;
+    background-color: rgb(20, 27, 51);
+}
+
+.menu_box img {
+    display: flex;
+    justify-content: center;
+}
+
+.menu_item {
+    display: block;
+    padding: 12px 24px;
+    color: antiquewhite;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 599;
+    text-decoration: none;
+    transition-duration: .25s;
+}
+
+.menu_item:hover {
+    background-color: gray;
+}
+
+main {
+    box-sizing: border-box;
+    background-color: rgb(20, 27, 51);
+}
+
+.slideshow-container {
+    max-width: 1700px;
+    position: relative;
+    overflow: hidden;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background-color: grey;
+    border-radius: 50%;
+    bottom: 30px;
+    position: relative;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    margin: 2px;
+}
+
+.active {
+    background-color: #4A86E8;
+}
+
+.fade {
+    animation: fade 2s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.05;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+.type--A {
+    --line_color: antiquewhite;
+    --back_color: #4A86E8;
+}
+
+.button {
+    position: relative;
+    z-index: 0;
+    width: 240px;
+    height: 56px;
+    text-decoration: none;
+    font: bold 14px sans-serif;
+    color: var(--line_color);
+    letter-spacing: 2px;
+    transition: all .3s ease;
+}
+
+.button__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.button::before,
+.button::after,
+.button__text::before,
+.button__text::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--line_color);
+    transition: all .5s ease;
+}
+
+.button::before {
+    top: 0;
+    left: 54px;
+    width: calc(100% - 56px * 2 - 16px);
+}
+
+.button::after {
+    top: 0;
+    right: 54px;
+    width: 8px;
+}
+
+.button__text::before {
+    bottom: 0;
+    right: 54px;
+    width: calc(100% - 56px * 2 - 16px);
+}
+
+.button__text::after {
+    bottom: 0;
+    left: 54px;
+    width: 8px;
+}
+
+.button__line {
+    position: absolute;
+    top: 0;
+    width: 56px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.button__line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 150%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 300px;
+    border: solid 3px var(--line_color);
+}
+
+.button__line:nth-child(1),
+.button__line:nth-child(1)::before {
+    left: 0;
+}
+
+.button__line:nth-child(2),
+.button__line:nth-child(2)::before {
+    right: 0;
+}
+
+.button:hover {
+    letter-spacing: 6px;
+}
+
+.button:hover::before,
+.button:hover .button__text::before {
+    width: 8px;
+}
+
+.button:hover::after,
+.button:hover .button__text::after {
+    width: calc(100% - 56px * 2 - 16px);
+}
+
+.button__drow1,
+.button__drow2 {
+    position: absolute;
+    z-index: -1;
+    border-radius: 16px;
+    transform-origin: 16px 16px;
+}
+
+.button__drow1 {
+    top: -16px;
+    left: 40px;
+    width: 32px;
+    height: 0;
+    transform: rotate(30deg);
+}
+
+.button__drow2 {
+    top: 44px;
+    left: 77px;
+    width: 32px;
+    height: 0;
+    transform: rotate(-127deg);
+}
+
+.button__drow1::before,
+.button__drow1::after,
+.button__drow2::before,
+.button__drow2::after {
+    content: '';
+    position: absolute;
+}
+
+.button__drow1::before {
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 32px;
+    border-radius: 16px;
+    transform-origin: 16px 16px;
+    transform: rotate(-60deg);
+}
+
+.button__drow1::after {
+    top: -10px;
+    left: 45px;
+    width: 0;
+    height: 32px;
+    border-radius: 16px;
+    transform-origin: 16px 16px;
+    transform: rotate(69deg);
+}
+
+.button__drow2::before {
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 32px;
+    border-radius: 16px;
+    transform-origin: 16px 16px;
+    transform: rotate(-146deg);
+}
+
+.button__drow2::after {
+    bottom: 26px;
+    left: -40px;
+    width: 0;
+    height: 32px;
+    border-radius: 16px;
+    transform-origin: 16px 16px;
+    transform: rotate(-262deg);
+}
+
+.button__drow1,
+.button__drow1::before,
+.button__drow1::after,
+.button__drow2,
+.button__drow2::before,
+.button__drow2::after {
+    background: var(--back_color);
+}
+
+.button:hover .button__drow1 {
+    animation: drow1 ease-in .06s;
+    animation-fill-mode: forwards;
+}
+
+.button:hover .button__drow1::before {
+    animation: drow2 linear .08s .06s;
+    animation-fill-mode: forwards;
+}
+
+.button:hover .button__drow1::after {
+    animation: drow3 linear .03s .14s;
+    animation-fill-mode: forwards;
+}
+
+.button:hover .button__drow2 {
+    animation: drow4 linear .06s .2s;
+    animation-fill-mode: forwards;
+}
+
+.button:hover .button__drow2::before {
+    animation: drow3 linear .03s .26s;
+    animation-fill-mode: forwards;
+}
+
+.button:hover .button__drow2::after {
+    animation: drow5 linear .06s .32s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes drow1 {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 100px;
+    }
+}
+
+@keyframes drow2 {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0;
+    }
+
+    11% {
+        opacity: 1;
+    }
+
+    100% {
+        width: 120px;
+    }
+}
+
+@keyframes drow3 {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 80px;
+    }
+}
+
+@keyframes drow4 {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 120px;
+    }
+}
+
+@keyframes drow5 {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 124px;
+    }
+}
+
+.container {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(20, 27, 51);
+}
+
+.button:not(:last-child) {
+    margin-bottom: 64px;
+}
+
+#Logo {
+    display: flex;
+    justify-content: center;
+}
+
+#Logo img {
+    padding-left: 300px;
+}
+
+#Def,
+#Statistiques,
+#Plus,
+footer {
+    text-align: center;
+    background-color: rgb(20, 27, 51);
+}
+
+#Chiffres {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#annee h2,
+#clients h2,
+#employés h2 {
+    color: #4A86E8;
+    font: bold 40px sans-serif;
+}
+
+#annee p,
+#clients p,
+#employés p {
+    font-size: 20px;
+    color: lightgray;
+}
+
+#Def h1 {
+    margin: 5px;
+}
+
+#Plus {
+    display: flex;
+    margin: 20px;
+}
+
+#Texte_Avis {
+    width: 800px;
+}
+
+#Texte_Avis li {
+    list-style-type: none;
+    width: 200px;
+    text-align: left;
+}
+
+footer a {
+    margin: 5px;
+}
+
+footer img:hover {
+    transform: scale(1.1);
+}
+
+#Slogan h2 {
+    font-family: "Lumios Marker";
+}
